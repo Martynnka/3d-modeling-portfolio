@@ -2,7 +2,6 @@ const scrollContainer = document.querySelector('.gallery-scroll');
 const btnLeft = document.querySelector('.scroll-btn.left');
 const btnRight = document.querySelector('.scroll-btn.right');
 
-// ⬇️ ČIA įrašyk visus savo paveikslėlių kelius
 const galleryImages = [
   'Examples/Example1.png',
   'Examples/Example2.png',
@@ -15,17 +14,17 @@ const galleryImages = [
 
 ];
 
-// Pridėti paveikslėlius į galeriją
+
 galleryImages.forEach(path => {
   const img = document.createElement('img');
   img.src = path;
   img.alt = 'Gallery image';
-  img.style.width = '300px'; // gali keisti plotį
+  img.style.width = '300px';
   img.style.marginRight = '10px';
   scrollContainer.appendChild(img);
 });
 
-// Mygtukai
+
 btnLeft.addEventListener('click', () => {
   scrollContainer.scrollBy({
     left: -300,
@@ -40,7 +39,6 @@ btnRight.addEventListener('click', () => {
   });
 });
 
-// ✅ Automatinis slinkimas kas 3 sekundes su loop
 setInterval(() => {
   const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
@@ -58,7 +56,6 @@ setInterval(() => {
 }, 3000);
 
 
-// === Hero nuotraukos keitimas ===
 const heroImage = document.getElementById('hero-image');
 
 const imagePaths = [
@@ -74,6 +71,7 @@ setInterval(() => {
   currentImage = (currentImage + 1) % imagePaths.length;
   heroImage.src = imagePaths[currentImage];
 }, 3000);
+
 
 
 
